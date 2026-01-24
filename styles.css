@@ -344,6 +344,98 @@ section {
   margin-bottom: 1rem;
 }
 
+.card h4 {
+  color: var(--color-navy);
+  margin-bottom: 0.5rem;
+}
+
+/* Benefit Cards - Single Row */
+.benefit-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid var(--color-gold);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 280px;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-left-color: var(--color-saffron);
+}
+
+.benefit-card h4 {
+  color: var(--color-navy);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.benefit-card p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* Responsive benefit cards */
+@media (max-width: 1400px) {
+  .benefit-card {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .benefit-card {
+    padding: 1.5rem 1.25rem;
+    min-height: 240px;
+  }
+
+  .benefit-card h4 {
+    font-size: 1rem;
+  }
+
+  .benefit-card p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid[style*="grid-template-columns: repeat(6"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem;
+  }
+
+  .benefit-card {
+    padding: 1.5rem 1rem;
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid[style*="grid-template-columns: repeat(6"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+  }
+
+  .benefit-card {
+    padding: 1.25rem 1rem;
+    min-height: 200px;
+  }
+
+  .benefit-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .benefit-card p {
+    font-size: 0.8rem;
+  }
+}
+
 .card p {
   color: #666;
   font-size: 0.95rem;
@@ -463,6 +555,86 @@ input.invalid,
 textarea.invalid {
   border-color: #e74c3c;
   background: #ffe6e6;
+}
+
+/* ========================================
+   TOP CONTACT BAR
+   ======================================== */
+
+.contact-bar {
+  background: var(--color-white);
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.contact-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contact-left {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  color: var(--color-navy);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.contact-icon {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.contact-link {
+  color: var(--color-gold);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--color-saffron);
+}
+
+@media (max-width: 768px) {
+  .contact-bar {
+    padding: 0.75rem 1rem;
+  }
+
+  .contact-bar-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-left {
+    width: 100%;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .contact-item {
+    font-size: 0.85rem;
+  }
+
+  .contact-link {
+    font-size: 0.85rem;
+  }
 }
 
 /* ========================================
@@ -816,15 +988,27 @@ textarea.invalid {
   right: 0;
   bottom: 0;
   background-image: 
-    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 60px 70px, #fff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 50px 50px, #fff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 90px 10px, #fff, rgba(0,0,0,0));
+    /* Multiple star layers for depth */
+    radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 60px 70px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(0.5px 0.5px at 50px 50px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(0.5px 0.5px at 90px 10px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 10px 90px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(0.5px 0.5px at 130px 130px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 70px 40px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(0.5px 0.5px at 100px 100px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 30px 110px, rgba(255,255,255,0.8), transparent);
   background-repeat: repeat;
-  background-size: 200px 200px;
-  opacity: 0.3;
+  background-size: 150px 150px;
+  opacity: 0.6;
   pointer-events: none;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.8; }
 }
 
 .hero-wrapper {
@@ -879,13 +1063,22 @@ textarea.invalid {
 }
 
 .consultant-circular {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--color-gold);
-  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+  border: 5px solid var(--color-gold);
+  box-shadow: 0 10px 40px rgba(212, 175, 55, 0.5), 
+              0 0 0 2px rgba(212, 175, 55, 0.2);
   flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.consultant-circular:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 50px rgba(212, 175, 55, 0.7), 
+              0 0 0 2px rgba(212, 175, 55, 0.3);
 }
 
 .consultant-info h3 {
@@ -961,24 +1154,26 @@ textarea.invalid {
 }
 
 .btn-appointment {
-  background: linear-gradient(135deg, var(--color-saffron) 0%, #ff8c00 100%);
+  background: linear-gradient(135deg, #ff9900 0%, #ff7700 100%);
   color: white;
-  padding: 1rem 2rem;
+  padding: 1.1rem 2rem;
   border: none;
   border-radius: 5px;
   font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   width: 100%;
+  letter-spacing: 0.5px;
 }
 
 .btn-appointment:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(244, 164, 96, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(255, 153, 0, 0.5);
+  background: linear-gradient(135deg, #ffaa11 0%, #ff8811 100%);
 }
 
 @keyframes slideInLeft {
