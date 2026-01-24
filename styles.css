@@ -237,7 +237,7 @@ footer p {
    ======================================== */
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -372,10 +372,10 @@ section {
 
 .grid-4-desktop {
   grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .grid-4-desktop {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -655,5 +655,49 @@ textarea.invalid {
   
   .consultant-profile img {
     max-width: 100% !important;
+  }
+}
+
+/* ========================================
+   FULL-WIDTH SERVICE GRIDS
+   ======================================== */
+
+/* Single row grid - 6 columns */
+.grid[style*="grid-template-columns: repeat(6"] {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .grid[style*="grid-template-columns: repeat(6"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid[style*="grid-template-columns: repeat(6"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid[style*="grid-template-columns: repeat(6"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+}
+
+/* Adjust padding wrapper for mobile */
+@media (max-width: 768px) {
+  div[style*="padding: 0 1.5rem"] {
+    padding: 0 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  div[style*="padding: 0 1.5rem"] {
+    padding: 0 0.75rem !important;
   }
 }
