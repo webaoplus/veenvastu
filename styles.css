@@ -382,6 +382,200 @@ section {
   flex-grow: 1;
 }
 
+/* Value Cards - Single Row */
+.value-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid var(--color-gold);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 280px;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-left-color: var(--color-saffron);
+}
+
+.value-card h4 {
+  color: var(--color-navy);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.value-card p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* Responsive value cards */
+@media (max-width: 1400px) {
+  .value-card {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .value-card {
+    padding: 1.5rem 1.25rem;
+    min-height: 240px;
+  }
+
+  .value-card h4 {
+    font-size: 1rem;
+  }
+
+  .value-card p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid[style*="grid-template-columns: repeat(6"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem;
+  }
+
+  .value-card {
+    padding: 1.5rem 1rem;
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid[style*="grid-template-columns: repeat(6"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+  }
+
+  .value-card {
+    padding: 1.25rem 1rem;
+    min-height: 200px;
+  }
+
+  .value-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .value-card p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Contact Cards - Single Row */
+.contact-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid var(--color-gold);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 300px;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-top-color: var(--color-saffron);
+}
+
+.contact-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.contact-card h4 {
+  color: var(--color-navy);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact-card p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+
+.contact-card .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Responsive contact cards */
+@media (max-width: 1400px) {
+  .contact-card {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact-card {
+    padding: 1.5rem 1.25rem;
+    min-height: 260px;
+  }
+
+  .contact-card h4 {
+    font-size: 1rem;
+  }
+
+  .contact-card p {
+    font-size: 0.85rem;
+  }
+
+  .contact-icon {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid[style*="grid-template-columns: repeat(6"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem;
+  }
+
+  .contact-card {
+    padding: 1.5rem 1rem;
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid[style*="grid-template-columns: repeat(6"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+  }
+
+  .contact-card {
+    padding: 1.25rem 1rem;
+    min-height: 220px;
+  }
+
+  .contact-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .contact-card p {
+    font-size: 0.8rem;
+  }
+
+  .contact-icon {
+    font-size: 2rem;
+  }
+}
+
 /* Responsive benefit cards */
 @media (max-width: 1400px) {
   .benefit-card {

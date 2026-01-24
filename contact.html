@@ -219,78 +219,81 @@
   </section>
 
   <!-- ========================================
-       CONTACT OPTIONS CARDS
+       CONTACT OPTIONS CARDS - SINGLE ROW
        ======================================== -->
-  <section class="container">
-    <div class="section-title">
-      <h2>How We Can Help</h2>
-    </div>
-
-    <div class="grid grid-2" style="margin-bottom: 3rem;">
-      <!-- CARD 1: 1-1 Consultancy -->
-      <div class="contact-card">
-        <div class="icon">👨‍💼</div>
-        <h3>1-1 Consultancy</h3>
-        <p>
-          Get personalized guidance directly from our principal consultants. Discuss your unique challenges, 
-          goals, and vision in a confidential, one-on-one setting tailored entirely to your needs.
-        </p>
-        <a href="#contactForm" class="btn btn-primary">Request Consultation</a>
+  <section style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(244, 164, 96, 0.05)); padding: 4rem 2rem;">
+    <div style="max-width: 1400px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="color: var(--color-navy); display: inline-block; font-size: 2.2rem; margin-bottom: 1rem;">How We Can Help</h2>
+        <div style="width: 80px; height: 4px; background: linear-gradient(90deg, var(--color-saffron) 0%, var(--color-gold) 100%); margin: 1rem auto;"></div>
       </div>
 
-      <!-- CARD 2: Corporate Event Booking -->
-      <div class="contact-card">
-        <div class="icon">🎤</div>
-        <h3>Corporate Event Booking</h3>
-        <p>
-          Host Vastu workshops and institutional assessments for your organization. Perfect for schools, 
-          hospitals, corporate offices, and large complexes seeking to enhance energy and productivity.
-        </p>
-        <a href="#contactForm" class="btn btn-primary">Inquire About Events</a>
-      </div>
+      <div class="grid" style="grid-template-columns: repeat(6, 1fr); gap: 2rem;">
+        <!-- CARD 1: 1-1 Consultancy -->
+        <div class="contact-card">
+          <div class="contact-icon">👨‍💼</div>
+          <h4>1-1 Consultancy</h4>
+          <p>
+            Get personalized guidance directly from our principal consultants. Discuss your unique challenges, 
+            goals, and vision in a confidential, one-on-one setting tailored entirely to your needs.
+          </p>
+          <a href="#contactForm" class="btn btn-primary">Request Consultation</a>
+        </div>
 
-      <!-- CARD 3: Book an Appointment -->
-      <div class="contact-card">
-        <div class="icon">📅</div>
-        <h3>Book an Appointment</h3>
-        <p>
-          Schedule your consultation instantly through Calendly. Choose your preferred date, time, and 
-          consultation mode (online or on-site) with just a few clicks.
-        </p>
-        <button onclick="redirectToCalendly()" class="btn btn-primary">Schedule Now</button>
-      </div>
+        <!-- CARD 2: Corporate Event Booking -->
+        <div class="contact-card">
+          <div class="contact-icon">🎤</div>
+          <h4>Corporate Events</h4>
+          <p>
+            Host Vastu workshops and institutional assessments for your organization. Perfect for schools, 
+            hospitals, corporate offices, and large complexes seeking to enhance energy and productivity.
+          </p>
+          <a href="#contactForm" class="btn btn-primary">Inquire About Events</a>
+        </div>
 
-      <!-- CARD 4: Reach Out -->
-      <div class="contact-card">
-        <div class="icon">✉️</div>
-        <h3>Send Us a Message</h3>
-        <p>
-          Have questions or want to discuss your project? Fill out our contact form below with your details 
-          and floor plan, and we'll respond within 24 hours.
-        </p>
-        <a href="#contactForm" class="btn btn-primary">Fill Contact Form</a>
-      </div>
+        <!-- CARD 3: Book an Appointment -->
+        <div class="contact-card">
+          <div class="contact-icon">📅</div>
+          <h4>Book Appointment</h4>
+          <p>
+            Schedule your consultation instantly through Calendly. Choose your preferred date, time, and 
+            consultation mode (online or on-site) with just a few clicks.
+          </p>
+          <button onclick="redirectToCalendly()" class="btn btn-primary">Schedule Now</button>
+        </div>
 
-      <!-- CARD 5: Direct Support -->
-      <div class="contact-card">
-        <div class="icon">💬</div>
-        <h3>Direct Support</h3>
-        <p>
-          Get instant expert advice via WhatsApp or phone. Our team is available Monday-Sunday, 
-          9 AM - 9 PM IST for quick questions and urgent consultations.
-        </p>
-        <a href="https://wa.me/919999999999" target="_blank" class="btn btn-primary">WhatsApp Us</a>
-      </div>
+        <!-- CARD 4: Reach Out -->
+        <div class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <h4>Send Message</h4>
+          <p>
+            Have questions or want to discuss your project? Fill out our contact form below with your details 
+            and floor plan, and we'll respond within 24 hours.
+          </p>
+          <a href="#contactForm" class="btn btn-primary">Fill Contact Form</a>
+        </div>
 
-      <!-- CARD 6: Email Communication -->
-      <div class="contact-card">
-        <div class="icon">📧</div>
-        <h3>Email Us</h3>
-        <p>
-          Prefer written communication? Send a detailed email with your questions, photos, or floor plans. 
-          We provide comprehensive email responses within 48 hours.
-        </p>
-        <a href="/cdn-cgi/l/email-protection#c9a0a7afa689bfa8babdbcaaa6a7babca5bda8a7aab0e7aaa6a4" class="btn btn-primary">Send Email</a>
+        <!-- CARD 5: Direct Support -->
+        <div class="contact-card">
+          <div class="contact-icon">💬</div>
+          <h4>Direct Support</h4>
+          <p>
+            Get instant expert advice via WhatsApp or phone. Our team is available Monday-Sunday, 
+            9 AM - 9 PM IST for quick questions and urgent consultations.
+          </p>
+          <a href="https://wa.me/919999999999" target="_blank" class="btn btn-primary">WhatsApp Us</a>
+        </div>
+
+        <!-- CARD 6: Email Communication -->
+        <div class="contact-card">
+          <div class="contact-icon">📧</div>
+          <h4>Email Us</h4>
+          <p>
+            Prefer written communication? Send a detailed email with your questions, photos, or floor plans. 
+            We provide comprehensive email responses within 48 hours.
+          </p>
+          <a href="mailto:info@veenakumari.in" class="btn btn-primary">Send Email</a>
+        </div>
       </div>
     </div>
   </section>
