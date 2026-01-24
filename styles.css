@@ -292,6 +292,7 @@ section {
 
 .btn-primary:hover {
   background: var(--color-saffron);
+  color: var(--color-navy);
   border-color: var(--color-saffron);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(244, 164, 96, 0.3);
@@ -1365,6 +1366,7 @@ textarea.invalid {
 }
 
 .btn-appointment:hover {
+  color: white;
   transform: translateY(-2px);
   box-shadow: 0 12px 30px rgba(255, 153, 0, 0.5);
   background: linear-gradient(135deg, #ffaa11 0%, #ff8811 100%);
