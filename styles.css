@@ -370,6 +370,29 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+.grid-4-desktop {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .grid-4-desktop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-4-desktop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-4-desktop {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ========================================
    FORMS
    ======================================== */
@@ -575,5 +598,33 @@ textarea.invalid {
   
   form {
     padding: 0 1rem;
+  }
+}
+
+/* ========================================
+   CONTACT INFO GRID - SINGLE ROW
+   ======================================== */
+
+.info-grid-single-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .info-grid-single-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .info-grid-single-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .info-grid-single-row {
+    grid-template-columns: 1fr;
   }
 }
