@@ -37,22 +37,47 @@
   </header>
 
   <!-- ========================================
-       HERO SECTION
+       HERO SECTION - REDESIGNED
        ======================================== -->
-  <section class="hero">
-    <div class="hero-container">
-      <div class="hero-content">
-        <div class="hero-icon" style="animation: none;">🕉️</div>
+  <section class="hero-redesigned">
+    <div class="hero-wrapper">
+      <!-- LEFT SIDE: CONSULTANT INFO & IMAGE -->
+      <div class="hero-left">
         <h1>Sacred Science of Architecture</h1>
-        <p style="font-size: 1.3rem; color: var(--color-saffron); font-weight: 500;">Remedies Without Demolition</p>
-        <p style="font-size: 1rem; color: #999; margin-top: 2rem; max-width: 600px; line-height: 1.8;">
-          Harnessing the five elements and Vastu Purusha Mandala for prosperity, peace, and harmony in your spaces
-        </p>
-        <a href="contact.html" class="btn btn-primary" style="margin-top: 2rem;">Start Your Journey</a>
+        <p class="hero-subtitle">Remedies Without Demolition</p>
+        <p class="hero-services">Vastu For: <strong>Residential • Commercial • Industrial • Astro-Vastu</strong></p>
+        
+        <div class="consultant-showcase">
+          <img src="consultant-profile-1.jpg" alt="Vastu Consultant" class="consultant-circular">
+          <div class="consultant-info">
+            <h3>Expert Vastu Consultant</h3>
+            <p>Sacred architecture & scientific approach for prosperity, health, and harmony</p>
+          </div>
+        </div>
       </div>
-      
-      <div class="hero-image">
-        <img src="consultant-profile-1.jpg" alt="Vastu Consultant - Expert Guidance" style="width: 100%; height: auto; border-radius: 15px; box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);">
+
+      <!-- RIGHT SIDE: APPOINTMENT FORM -->
+      <div class="hero-right">
+        <div class="appointment-box">
+          <h2>Book a Consultation</h2>
+          <p>Connect with our expert consultants for personalized Vastu guidance</p>
+          
+          <form class="appointment-form">
+            <div class="form-row">
+              <input type="text" placeholder="Full Name" required>
+              <input type="tel" placeholder="Phone" required>
+            </div>
+            
+            <div class="form-row">
+              <input type="email" placeholder="Email" required>
+              <input type="text" placeholder="Property Location" required>
+            </div>
+            
+            <textarea placeholder="Your Query or Requirements" rows="4" required></textarea>
+            
+            <a href="contact.html" class="btn btn-appointment">Book Appointment</a>
+          </form>
+        </div>
       </div>
     </div>
   </section>
