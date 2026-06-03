@@ -24,7 +24,7 @@
       <div class="contact-left">
         <span class="contact-item">
           <span class="contact-icon">📞</span>
-          For Appointment: +91 9971105440
+          <a href="tel:+919019163521" style="color: inherit; text-decoration: none;">For Appointment: +91 90191 63521</a>
         </span>
         <span class="contact-item" style="margin-left: 2rem;">
           <span class="contact-icon">📧</span>
@@ -88,20 +88,26 @@
           <h2>Book a Consultation</h2>
           <p>Connect with our expert consultants for personalized Vastu guidance</p>
           
-          <form class="appointment-form">
+          <form class="appointment-form" action="https://formsubmit.co/kveenak11@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New consultation request — veenakumari.in (Hero)">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://veenakumari.in/index.html#thank-you">
+            <input type="text" name="_honey" style="display:none">
+
             <div class="form-row">
-              <input type="text" placeholder="Full Name" required>
-              <input type="tel" placeholder="Phone" required>
+              <input type="text" name="name" placeholder="Full Name" required>
+              <input type="tel" name="phone" placeholder="Phone" required>
             </div>
-            
+
             <div class="form-row">
-              <input type="email" placeholder="Email" required>
-              <input type="text" placeholder="Property Location" required>
+              <input type="email" name="email" placeholder="Email" required>
+              <input type="text" name="location" placeholder="Property Location" required>
             </div>
-            
-            <textarea placeholder="Your Query or Requirements" rows="4" required></textarea>
-            
-            <a href="contact.html" class="btn btn-appointment">Book Appointment</a>
+
+            <textarea name="message" placeholder="Your Query or Requirements" rows="4" required></textarea>
+
+            <button type="submit" class="btn btn-appointment">Book Appointment</button>
           </form>
         </div>
       </div>
@@ -286,7 +292,7 @@
 
       <div class="footer-section">
         <h4>Contact Info</h4>
-        <a href="tel:+919999999999">+91 9999 999 999</a>
+        <a href="tel:+919019163521">+91 90191 63521</a>
         <a href="/cdn-cgi/l/email-protection#345d5a525b744255474041575b5a47415840555a574d1a575b59"><span class="__cf_email__" data-cfemail="c8a1a6aea788bea9bbbcbdaba7a6bbbda4bca9a6abb1e6aba7a5">[email&#160;protected]</span></a>
         <p>Available: Mon-Sun, 9 AM - 9 PM IST</p>
       </div>
@@ -300,6 +306,8 @@
   <!-- ========================================
        WHATSAPP FLOATING BUTTON
        ======================================== -->
-  <div class="whatsapp-float" title="Contact us on WhatsApp">💬</div>
+  <a class="whatsapp-float" href="https://wa.me/919019163521?text=Hello%21%20I%27d%20like%20to%20know%20more%20about%20your%20Vastu%20consultancy%20services." target="_blank" rel="noopener" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">💬</a>
 
-  <!-- =============
+  <script src="script.js" defer></script>
+</body>
+</html>

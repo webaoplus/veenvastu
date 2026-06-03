@@ -259,7 +259,7 @@
             Schedule your consultation instantly through Calendly. Choose your preferred date, time, and 
             consultation mode (online or on-site) with just a few clicks.
           </p>
-          <button onclick="redirectToCalendly()" class="btn btn-primary">Schedule Now</button>
+          <a href="https://calendly.com/aoplusin/vastu-consultancy" target="_blank" rel="noopener" class="btn btn-primary">Schedule Now</a>
         </div>
 
         <!-- CARD 4: Reach Out -->
@@ -281,7 +281,7 @@
             Get instant expert advice via WhatsApp or phone. Our team is available Monday-Sunday, 
             9 AM - 9 PM IST for quick questions and urgent consultations.
           </p>
-          <a href="https://wa.me/919999999999" target="_blank" class="btn btn-primary">WhatsApp Us</a>
+          <a href="https://wa.me/919019163521" target="_blank" class="btn btn-primary">WhatsApp Us</a>
         </div>
 
         <!-- CARD 6: Email Communication -->
@@ -308,7 +308,13 @@
         Help us understand your needs better. Fill out the form below with your information and project details.
       </p>
 
-      <form id="contactForm" class="contact-form">
+      <form id="contactForm" class="contact-form" action="https://formsubmit.co/kveenak11@gmail.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="New consultation request — veenakumari.in (Contact)">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://veenakumari.in/contact.html#thank-you">
+        <input type="text" name="_honey" style="display:none">
+
         <div class="success-message" id="successMessage">
           ✓ Your message has been sent successfully! We'll contact you within 24 hours.
         </div>
@@ -394,14 +400,14 @@
         <div class="info-item">
           <div class="icon">📱</div>
           <h4>Call Us</h4>
-          <p><a href="tel:+919999999999">+91 9999 999 999</a></p>
+          <p><a href="tel:+919019163521">+91 90191 63521</a></p>
           <p style="font-size: 0.85rem; margin-top: 0.5rem;">Mon-Sun, 9 AM - 9 PM IST</p>
         </div>
 
         <div class="info-item">
           <div class="icon">💬</div>
           <h4>WhatsApp</h4>
-          <p><a href="https://wa.me/919999999999" target="_blank">Message on WhatsApp</a></p>
+          <p><a href="https://wa.me/919019163521" target="_blank">Message on WhatsApp</a></p>
           <p style="font-size: 0.85rem; margin-top: 0.5rem;">Instant response • Expert advice</p>
         </div>
 
@@ -500,7 +506,7 @@
 
       <div class="footer-section">
         <h4>Contact Info</h4>
-        <a href="tel:+919999999999">+91 9999 999 999</a>
+        <a href="tel:+919019163521">+91 90191 63521</a>
         <a href="/cdn-cgi/l/email-protection#335a5d555c734552404746505c5d40465f47525d504a1d505c5e"><span class="__cf_email__" data-cfemail="1871767e77586e796b6c6d7b77766b6d746c79767b61367b7775">[email&#160;protected]</span></a>
         <p>Available: Mon-Sun, 9 AM - 9 PM IST</p>
       </div>
@@ -511,4 +517,11 @@
     </div>
   </footer>
 
-  <!-- =======================
+  <!-- ========================================
+       THANK-YOU ANCHOR (target of Formsubmit _next redirect)
+       ======================================== -->
+  <div id="thank-you" style="display:none"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -49,7 +49,7 @@ function initWhatsAppButton() {
   if (whatsappButton) {
     whatsappButton.addEventListener('click', function () {
       // Replace with actual WhatsApp number
-      const phoneNumber = '+919999999999'; // Example number
+      const phoneNumber = '+919019163521'; // Example number
       const message = 'Hello! I would like to know more about your Vastu consultancy services.';
       const whatsappURL = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
       window.open(whatsappURL, '_blank');
@@ -190,10 +190,11 @@ class FormValidator {
   }
 }
 
-// Initialize form validation
-document.addEventListener('DOMContentLoaded', function () {
-  new FormValidator('contactForm');
-});
+// Contact form submits to Formsubmit.co directly; native HTML5 validation
+// (required attribute + type checks) handles input validation. We no longer
+// preventDefault, so leaving FormValidator off this form on purpose.
+// To re-enable JS validation, uncomment:
+// document.addEventListener('DOMContentLoaded', () => new FormValidator('contactForm'));
 
 // ========================================
 // SMOOTH SCROLLING FOR ANCHOR LINKS
@@ -326,8 +327,7 @@ document.addEventListener('keydown', function (e) {
 // ========================================
 
 function redirectToCalendly() {
-  // Replace with actual Calendly link
-  window.open('https://calendly.com/your-username', '_blank');
+  window.open('https://calendly.com/aoplusin/vastu-consultancy', '_blank');
 }
 
 // ========================================
