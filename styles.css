@@ -693,6 +693,23 @@ section {
   gap: 2rem;
 }
 
+/* Contact "How We Can Help" — 3x2 on desktop, collapses responsively */
+.help-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .help-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .help-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 1200px) {
   .grid-4-desktop {
     grid-template-columns: repeat(2, 1fr);

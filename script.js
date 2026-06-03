@@ -327,7 +327,7 @@ document.addEventListener('keydown', function (e) {
 // ========================================
 
 function redirectToCalendly() {
-  window.open('https://calendly.com/aoplusin/vastu-consultancy', '_blank');
+  window.open('https://calendly.com/kveenak11/30min', '_blank');
 }
 
 // ========================================
