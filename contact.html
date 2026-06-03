@@ -9,6 +9,9 @@
   
   <title>Contact Us - veenakumari.in</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="styles.css">
   <style>
     .contact-card {
@@ -105,18 +108,19 @@
     .file-upload-label {
       display: block;
       padding: 0.75rem;
-      background: var(--color-white);
-      border: 2px dashed var(--color-gold);
-      border-radius: 5px;
+      background: var(--surface-1);
+      border: 2px dashed var(--brand-gold);
+      border-radius: var(--radius);
       text-align: center;
       cursor: pointer;
       transition: var(--transition);
-      color: var(--color-gold);
+      color: var(--ink-700);
       font-weight: 600;
     }
 
     .file-upload input[type='file']:hover ~ .file-upload-label {
-      background: rgba(212, 175, 55, 0.1);
+      background: var(--surface-2);
+      border-color: var(--brand-primary);
     }
 
     .success-message {
@@ -146,8 +150,8 @@
     }
 
     .contact-info-section {
-      background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-dark) 100%);
-      color: var(--color-white);
+      background: var(--surface-2);
+      color: var(--ink-700);
       padding: 3rem 0;
       margin-top: 4rem;
     }
@@ -168,22 +172,22 @@
     }
 
     .info-item h4 {
-      color: var(--color-gold);
+      color: var(--brand-deep);
       margin-bottom: 0.5rem;
     }
 
     .info-item p {
-      color: var(--color-light);
+      color: var(--ink-700);
       font-size: 0.95rem;
     }
 
     .info-item a {
-      color: var(--color-light);
+      color: var(--brand-primary);
       font-weight: 600;
     }
 
     .info-item a:hover {
-      color: var(--color-gold);
+      color: var(--brand-primary-hover);
     }
   </style>
 </head>

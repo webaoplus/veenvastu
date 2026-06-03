@@ -3,6 +3,8 @@
    ======================================== */
 
 :root {
+  /* Legacy palette — kept because many rules use these as TEXT colors.
+     Don't change values here without auditing every var(--color-navy/dark/white). */
   --color-gold: #d4af37;
   --color-saffron: #f4a460;
   --color-navy: #1a3a52;
@@ -10,12 +12,41 @@
   --color-light: #f8f6f3;
   --color-white: #ffffff;
   --color-accent: #c9a961;
-  
+
   --font-serif: 'Georgia', 'Garamond', serif;
-  --font-sans: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-  
+  /* Inter loaded via Google Fonts in <head>; system fallbacks for offline */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+
   --transition: all 0.3s ease;
   --spacing-unit: 1rem;
+
+  /* === Modern Vastu SaaS palette === */
+  --ink-900: #0f172a;            /* High-contrast headings */
+  --ink-700: #1e293b;            /* Body text */
+  --ink-500: #475569;            /* Muted text */
+  --ink-300: #cbd5e1;            /* Disabled / hairlines */
+
+  --surface-0: #ffffff;          /* Cards */
+  --surface-1: #fbf7f0;          /* Page background — warm cream */
+  --surface-2: #f5ecdc;          /* Section accent */
+  --surface-3: #efe2c8;          /* Soft saffron tint */
+
+  --brand-primary: #ea580c;      /* Saffron CTA — high contrast */
+  --brand-primary-hover: #c2410c;
+  --brand-deep: #7c2d12;         /* Deep maroon accent */
+  --brand-gold: #d4af37;
+
+  --border-soft: #ece2cf;
+  --border-strong: #d8c8a8;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 14px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.12);
 }
 
 /* ========================================
@@ -1927,4 +1958,456 @@ textarea.invalid {
   .parampara-intro {
     font-size: 0.98rem;
   }
+}
+
+/* ============================================================
+   MODERN VASTU SAAS OVERLAY
+   Appended last so cascade order makes these the winning rules.
+   Goals:
+     - Light cream page background (no dark hero)
+     - Inter typography end-to-end
+     - 12px rounded corners across cards / buttons / inputs
+     - Saffron CTAs with strong contrast
+     - Keeps the dark footer (conventional, intentional)
+   ============================================================ */
+
+/* ---- Base / typography ---- */
+body {
+  font-family: var(--font-sans);
+  color: var(--ink-700);
+  background-color: var(--surface-1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  color: var(--ink-900);
+  letter-spacing: -0.015em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-weight: 800; letter-spacing: -0.025em; }
+
+p {
+  color: var(--ink-700);
+}
+
+/* ---- Container / sections ---- */
+section {
+  background-color: transparent;
+}
+
+.section-title h2 {
+  color: var(--ink-900);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.section-title h2::after {
+  background: linear-gradient(90deg, var(--brand-primary), var(--brand-gold));
+}
+
+/* ---- HERO: light theme ---- */
+.hero-redesigned {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(244, 164, 96, 0.22), transparent 50%),
+    radial-gradient(circle at 82% 78%, rgba(212, 175, 55, 0.18), transparent 55%),
+    var(--surface-1);
+  background-attachment: scroll;
+  color: var(--ink-700);
+  padding: 4.5rem 2rem 4rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+/* Remove the dark-theme star overlay */
+.hero-redesigned::before {
+  display: none;
+}
+
+.hero-left h1 {
+  color: var(--ink-900);
+  font-size: 3.1rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+.hero-subtitle {
+  color: var(--brand-primary);
+  font-weight: 600;
+}
+
+.hero-services {
+  color: var(--ink-500);
+}
+
+.hero-services strong {
+  color: var(--ink-900);
+  font-weight: 600;
+}
+
+.consultant-info h3 {
+  color: var(--ink-900);
+}
+
+.consultant-info p {
+  color: var(--ink-500);
+}
+
+.consultant-circular {
+  border-color: var(--brand-gold);
+  box-shadow:
+    0 14px 36px rgba(212, 175, 55, 0.30),
+    0 0 0 2px rgba(212, 175, 55, 0.18);
+}
+
+.consultant-circular:hover {
+  box-shadow:
+    0 18px 48px rgba(212, 175, 55, 0.4),
+    0 0 0 2px rgba(212, 175, 55, 0.28);
+}
+
+/* Hero credential pill — works on cream */
+.hero-credential-badge {
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  color: var(--ink-900);
+  backdrop-filter: none;
+}
+
+.hero-credential-badge:hover {
+  background: var(--surface-3);
+  border-color: var(--brand-primary);
+  color: var(--ink-900);
+}
+
+.hero-credential-badge strong {
+  color: var(--brand-deep);
+}
+
+/* Appointment card — white, soft shadow, 12px corners */
+.appointment-box {
+  background: var(--surface-0);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-soft);
+}
+
+.appointment-box h2 {
+  color: var(--ink-900);
+  font-weight: 700;
+}
+
+.appointment-box > p {
+  color: var(--ink-500);
+}
+
+.appointment-form input,
+.appointment-form textarea {
+  border-radius: var(--radius);
+  border: 1px solid var(--border-soft);
+  background: #fff;
+  color: var(--ink-900);
+  font-family: var(--font-sans);
+  padding: 0.85rem 1rem;
+}
+
+.appointment-form input::placeholder,
+.appointment-form textarea::placeholder {
+  color: var(--ink-500);
+}
+
+.appointment-form input:focus,
+.appointment-form textarea:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
+  outline: none;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border-radius: var(--radius);
+  padding: 0.85rem 1.75rem;
+  letter-spacing: -0.005em;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--brand-primary);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.25);
+}
+
+.btn-primary:hover {
+  background: var(--brand-primary-hover);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(234, 88, 12, 0.32);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink-900);
+  border: 1.5px solid var(--ink-900);
+}
+
+.btn-secondary:hover {
+  background: var(--ink-900);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-appointment {
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-hover));
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 1rem 2rem;
+  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+}
+
+.btn-appointment:hover {
+  background: linear-gradient(135deg, var(--brand-primary-hover), #9a3412);
+  box-shadow: 0 12px 28px rgba(234, 88, 12, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ---- Cards (universal 12px, top accent line) ---- */
+.card,
+.benefit-card,
+.value-card,
+.contact-card,
+.service-card {
+  background: var(--surface-0);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-soft);
+  border-left: none;
+  border-top: 3px solid var(--brand-gold);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover,
+.benefit-card:hover,
+.value-card:hover,
+.contact-card:hover,
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-top-color: var(--brand-primary);
+  border-left-color: transparent;
+}
+
+.card h3,
+.card h4,
+.benefit-card h4,
+.value-card h4,
+.contact-card h3,
+.contact-card h4,
+.service-card h3 {
+  color: var(--ink-900);
+}
+
+.benefit-card p,
+.value-card p,
+.contact-card p,
+.service-card p {
+  color: var(--ink-500);
+}
+
+/* ---- Lineage cards (already modern, retune to tokens) ---- */
+.lineage-section {
+  background:
+    radial-gradient(circle at 85% 18%, rgba(244, 164, 96, 0.10), transparent 45%),
+    var(--surface-1);
+}
+
+.lineage-section--top {
+  border-top: 1px solid var(--border-soft);
+  box-shadow: none;
+}
+
+.lineage-card {
+  background: var(--surface-0);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border-top: 3px solid var(--brand-gold);
+  border-left: none;
+  border-right: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.lineage-card:hover {
+  box-shadow: var(--shadow-md);
+  border-top-color: var(--brand-primary);
+}
+
+.lineage-card--featured {
+  border-top-width: 3px;
+  box-shadow: var(--shadow-md);
+}
+
+.lineage-card h3 { color: var(--ink-900); }
+.lineage-card p { color: var(--ink-500); }
+
+.lineage-tag {
+  background: var(--surface-2);
+  color: var(--ink-700);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.lineage-tag--gold {
+  background: linear-gradient(135deg, var(--brand-gold), var(--color-saffron));
+  color: var(--ink-900);
+}
+
+/* Certificate backdrop — warm cream, not navy */
+.lineage-img-wrap--certificate {
+  background: linear-gradient(135deg, var(--surface-3), var(--surface-2));
+}
+
+/* ---- Parampara (about page) ---- */
+.parampara-section {
+  background:
+    radial-gradient(circle at 12% 28%, rgba(244, 164, 96, 0.08), transparent 45%),
+    var(--surface-1);
+}
+
+.parampara-figure {
+  border-radius: var(--radius);
+}
+
+.parampara-figure--certificate {
+  background: linear-gradient(135deg, var(--surface-3), var(--surface-2));
+}
+
+.parampara-text h3 { color: var(--ink-900); }
+.parampara-text p { color: var(--ink-700); }
+
+/* ---- Inputs everywhere ---- */
+input, textarea, select {
+  font-family: var(--font-sans);
+  border-radius: var(--radius);
+}
+
+input:not([type="hidden"]):not([type="file"]),
+textarea,
+select {
+  border: 1px solid var(--border-soft);
+  background: #fff;
+  color: var(--ink-900);
+  padding: 0.75rem 1rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
+}
+
+label {
+  color: var(--ink-700);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  display: inline-block;
+}
+
+/* ---- Contact bar (homepage) ---- */
+.contact-bar {
+  background: var(--surface-0);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.contact-item,
+.contact-item a {
+  color: var(--ink-700);
+}
+
+.contact-link {
+  color: var(--brand-primary);
+}
+
+.contact-link:hover {
+  color: var(--brand-primary-hover);
+}
+
+/* ---- Logo / header keeps dark navy gradient (conventional, ok with brief) ---- */
+/* Footer keeps dark navy gradient too (conventional per advisor) */
+
+/* ---- Mission/quote block lightening ---- */
+.mission-statement {
+  background: linear-gradient(135deg, rgba(244, 164, 96, 0.10), rgba(212, 175, 55, 0.08));
+  border-left-color: var(--brand-primary);
+  border-radius: var(--radius);
+}
+
+.mission-statement h3 { color: var(--brand-deep); }
+.mission-statement p { color: var(--ink-700); }
+
+/* ---- Make all existing radius-5/8/10/15/20 standardize ---- */
+.card, .benefit-card, .value-card, .contact-card, .service-card,
+.appointment-box, .lineage-card, .parampara-figure, .mission-statement,
+.codex-item, .info-item, .mode-card, .form-container, .contact-form,
+.file-upload-label, .success-message {
+  border-radius: var(--radius) !important;
+}
+
+/* ---- Standardize input/select/textarea radius too ---- */
+input, textarea, select, .btn, button {
+  border-radius: var(--radius) !important;
+}
+
+/* Hero responsive font tune-down */
+@media (max-width: 768px) {
+  .hero-left h1 { font-size: 2.1rem; letter-spacing: -0.02em; }
+  .hero-redesigned { padding: 2.5rem 1rem 3rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-left h1 { font-size: 1.7rem; }
+}
+
+/* ---- Page banner hero (about/services/contact) ---- */
+.hero {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(244, 164, 96, 0.18), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.12), transparent 55%),
+    var(--surface-1);
+  color: var(--ink-700);
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  color: var(--ink-900);
+  font-weight: 800;
+  font-size: 2.6rem;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.hero-content p {
+  color: var(--ink-500);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 1.9rem; }
+  .hero { padding: 2.5rem 1rem; }
 }
