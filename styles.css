@@ -808,27 +808,39 @@ textarea.invalid {
 }
 
 @media (max-width: 768px) {
+  /* Contact bar collapses to a single compact row showing just the phone.
+     Email and the right-side consultant link are hidden to free space.
+     Sticky behavior is dropped — only the header stays pinned on scroll. */
   .contact-bar {
-    padding: 0.75rem 1rem;
+    position: static;
+    padding: 0.45rem 0.75rem;
   }
 
   .contact-bar-content {
-    flex-direction: column;
-    gap: 1rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.75rem;
   }
 
   .contact-left {
-    width: 100%;
-    gap: 1.5rem;
+    width: auto;
+    gap: 0.75rem;
     justify-content: center;
+    flex-wrap: nowrap;
   }
 
   .contact-item {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
-  .contact-link {
-    font-size: 0.85rem;
+  /* Hide secondary contact items on mobile: email + "Veena Kumari | Expert Consultant".
+     The phone is the primary CTA; everything else lives in the body of the page. */
+  .contact-left .contact-item + .contact-item {
+    display: none;
+  }
+
+  .contact-right {
+    display: none;
   }
 }
 
@@ -1001,27 +1013,63 @@ textarea.invalid {
   h1 { font-size: 2.2rem; }
   h2 { font-size: 1.8rem; }
   h3 { font-size: 1.4rem; }
-  
-  nav {
-    flex-direction: column;
-    gap: 1rem;
+
+  /* Mobile nav: logo on the left, hamburger on the right (single row).
+     Nav links are hidden by default and drop down below the header when
+     the hamburger toggles `.active` (handled in script.js). */
+  header {
+    padding: 0.5rem 0;
   }
-  
+
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    padding: 0 1rem;
+    position: relative;
+  }
+
   .nav-links {
+    display: none;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
     width: 100%;
     text-align: center;
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-dark) 100%);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 0.75rem 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    z-index: 999;
   }
-  
-  .hamburger {
-    display: flex;
-  }
-  
+
   .nav-links.active {
     display: flex;
   }
-  
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    padding: 0.5rem;
+  }
+
   section {
     padding: 2.5rem 0;
   }
@@ -1057,11 +1105,16 @@ textarea.invalid {
   .logo {
     font-size: 1.4rem;
   }
-  
+
   .nav-links {
-    gap: 0.8rem;
+    gap: 0;
   }
-  
+
+  .nav-links a {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
   .card {
     padding: 1.5rem;
   }
