@@ -1363,6 +1363,7 @@ textarea.invalid {
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 15%;
   border: 5px solid var(--color-gold);
   box-shadow: 0 10px 40px rgba(212, 175, 55, 0.5), 
               0 0 0 2px rgba(212, 175, 55, 0.2);
